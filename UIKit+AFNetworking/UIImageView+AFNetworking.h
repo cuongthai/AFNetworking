@@ -1,4 +1,4 @@
-// UIImageView+AFNetworking.h
+@interface UIImageView (AFNetworking)// UIImageView+AFNetworking.h
 //
 // Copyright (c) 2013-2014 AFNetworking (http://afnetworking.com)
 //
@@ -38,6 +38,8 @@
 ///----------------------------
 /// @name Accessing Image Cache
 ///----------------------------
+
+- (void)clearImageCacheForURL:(NSURL *)url;
 
 /**
  The image cache used to improve image loadiing performance on scroll views. By default, this is an `NSCache` subclass conforming to the `AFImageCache` protocol, which listens for notification warnings and evicts objects accordingly.
@@ -138,6 +140,9 @@
  */
 - (void)cacheImage:(UIImage *)image
         forRequest:(NSURLRequest *)request;
+
+- (void)clearCachedRequest:(NSURLRequest *)request;
+
 @end
 
 #endif
