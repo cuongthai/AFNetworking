@@ -1,4 +1,3 @@
-// UIImageView+AFNetworking.h
 //
 // Copyright (c) 2013-2015 AFNetworking (http://afnetworking.com)
 //
@@ -112,6 +111,8 @@
  */
 - (void)cancelImageRequestOperation;
 
+- (void)clearImageCacheForURL:(NSURL *)url;
+
 @end
 
 #pragma mark -
@@ -138,6 +139,10 @@
  */
 - (void)cacheImage:(UIImage *)image
         forRequest:(NSURLRequest *)request;
+
+- (void)clearCachedRequest:(NSURLRequest *)request;
+
+
 @end
 
 #endif
